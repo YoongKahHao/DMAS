@@ -14,33 +14,38 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #000;
+            background-color: #4285f4;
             overflow: hidden;
+            font-family: 'Null', sans-serif;
         }
 
-        /* Animation for intro text */
+        /* Style for the 'Y' letter */
         .intro {
-            font-size: 48px;
-            color: #fff;
-            animation: fadeOut 5s forwards;
+            font-size: 96px;
+            color: white;
+            animation: fadeOut 1.5s ease-in-out 1.5s forwards; /* Starts fade out after 11.3 seconds */
         }
 
+        /* Animation for fading out */
         @keyframes fadeOut {
-            0% { opacity: 1; }
-            100% { opacity: 0; }
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="intro">
-        Welcome to Kah Hao's Portfolio
-    </div>
+    <div class="intro">Y</div>
 
     <script>
-        // Redirect to portfolio page after 5 seconds
+        // Redirect to portfolio page after 12.8 seconds (11.3s pause + 1.5s fade-out)
         setTimeout(function() {
             window.location.href = "https://sites.google.com/view/yoongkahhao/home";
-        }, 5000); // Adjust this time to match your animation length
+        }, 12800); // 12.8 seconds in milliseconds
     </script>
 </body>
 </html>
+
