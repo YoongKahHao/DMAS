@@ -23,16 +23,17 @@
         .intro {
             font-size: 96px;
             color: white;
-            animation: fadeOut 1.5s ease-in-out 1.5s forwards; /* Starts fade out after 11.3 seconds */
+            opacity: 0;
+            animation: fadeIn 1.0s ease-in-out forwards; /* Fade-in animation */
         }
 
-        /* Animation for fading out */
-        @keyframes fadeOut {
+        /* Animation for fading in */
+        @keyframes fadeIn {
             0% {
-                opacity: 1;
+                opacity: 0;
             }
             100% {
-                opacity: 0;
+                opacity: 1;
             }
         }
     </style>
@@ -41,10 +42,9 @@
     <div class="intro">Y</div>
 
     <script>
-        // Redirect to portfolio page after 12.8 seconds (11.3s pause + 1.5s fade-out)
         setTimeout(function() {
             window.location.href = "https://sites.google.com/view/yoongkahhao/home";
-        }, 12800); // 12.8 seconds in milliseconds
+        }, 1000); // 1.8 seconds in milliseconds
     </script>
 </body>
 </html>
