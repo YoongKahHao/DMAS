@@ -16,43 +16,81 @@
             align-items: center;
             background-color: #4285f4;
             overflow: hidden;
-            font-family: 'Null', sans-serif; /* Use custom font */
+            font-family: 'Open Sans', sans-serif;
+            flex-direction: column;
         }
 
-        /* Style for the image */
+        /* Style for the intro image */
         .intro-image {
-            max-width: 25%; /* Adjust size as needed */
-            max-height: 25%; /* Adjust size as needed */
-            opacity: 0; /* Start invisible */
-            animation: smoothPopOut 2s ease-in-out forwards; /* Smooth pop-out animation over 2 seconds */
+            width: 150px; /* Adjust width as needed */
+            height: auto;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            margin-bottom: 20px;
         }
 
-        /* Animation for smooth pop-out effect */
-        @keyframes smoothPopOut {
+        /* Style for the "Hello!" text */
+        .hello-text {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            opacity: 0;
+            animation: textFadeIn 2s ease-in-out forwards;
+            text-align: center;
+        }
+
+
+        /* Fade-in animations */
+        @keyframes textFadeIn {
             0% {
-                opacity: 0; /* Invisible */
-                transform: scale(0.5); /* Start small */
-            }
-            30% {
-                opacity: 1; /* Fully visible */
-                transform: scale(1.2); /* Scale slightly larger */
+                opacity: 0;
+                transform: translateY(-20px);
             }
             100% {
-                opacity: 1; /* Fully visible */
-                transform: scale(1); /* Return to original size */
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
-    <!-- Replace with the path to your uploaded image -->
+
+    <!-- Intro Image -->
     <img src="https://i.postimg.cc/CKhdWXsm/Black-Bold-Typographic-Retro-Night-Club-Restaurant-Bar-Logo-1-removebg-preview.png" alt="Intro Image" class="intro-image">
 
+    <!-- Dynamic "Hello!" Text -->
+    <div class="hello-text" id="helloText">Hello!</div>
+
+    <!-- Welcome Message Text -->
+
     <script>
+        // Array of "Hello!" in different languages
+        const greetings = [
+            "Hello !", "Hola !", "Bonjour !", "Hallo !", "Ciao !", "こんにちは !", "안녕하세요 !", "你好 !", "Olá !", "你好 ！","Good Day!","नमस्ते !"
+        ];
+
+        // Select a random greeting
+        const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+
+        // Set the random greeting as the inner text of the helloText element
+        document.getElementById("helloText").textContent = randomGreeting;
+
         // Redirect to portfolio page after 3 seconds (2s animation + 1s stay)
         setTimeout(function() {
             window.location.href = "https://sites.google.com/view/yoongkahhao/home";
-        }, 3000); // 3 seconds in milliseconds
+        }, 4000); // 4 seconds in milliseconds
     </script>
+
 </body>
 </html>
